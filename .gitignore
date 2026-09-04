@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets and local config — never publish
+.env
+.env.*
+*.vars.env
+.railway/
+.vercel/
+banned_names.local.txt
+
+# Build and dependencies
+node_modules/
+dist/
+.next/
+__pycache__/
+
+# Editors
+.vscode/
+.idea/
+.cursor/
