@@ -1,8 +1,5 @@
 # Agio Summit Shell — Brand & Reuse Doctrine
 
-> **Codified after a mistake:** a demo was built that renamed the product to "Agentic Carrier" and
-> swapped the logo. That is forbidden. This doctrine is the rule for **every** RoverAX demo.
-
 ## The rule (non-negotiable)
 **Agio Summit is the product. Its identity is FIXED across every demo and every industry.**
 
@@ -26,15 +23,6 @@
 
 **Accent color:** production is gold `#b8922e`. An approved per-demo recolor is allowed for the
 **accent only** (telecom uses carrier magenta `#e20074`). The **navy base is fixed.**
-
-## Source of truth & governance (for any Agio Summit prod work, point Claude at these)
-- **Commit `0afbcd0`** — the production source of truth.
-- **`NLG_agentic_ai_capital_raise/CLAUDE_FABLE5_PROJECT_REVIEW_BRIEF.md`** — the review brief.
-- **Parent `NLG_NTT_AgenticAI_PM Role/CLAUDE.md`** — guardrails (brand-lock is codified there).
-- **There is NO `capital_raise`-level `CLAUDE.md`** — do not look for one.
-
-Production shell file: `NLG_agentic_ai_capital_raise/outputs/ui/agio-agentic-command-center-preview.html`.
-Live: https://agio-summit-capital-command-center.vercel.app/ · brand assets in the Agio repo `web/brand/`.
 
 ## How to build a NEW industry demo (retail · CPG · PE · VC · telecom)
 1. Copy the shell (this file's `web/` is the telecom instance; keep the head, tokens, topbar, hero

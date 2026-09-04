@@ -33,9 +33,9 @@ both screens subscribe to (SSE/WebSocket, per the aiops-nextgen event-streaming 
 - The audit record is tamper-evident and replayable (replay the record always works; re-execute is
   best-effort against the pinned model+version).
 - The same object is the legal artifact AND the screen-2 payload — they cannot drift.
-- **Demo honesty:** screen 2 is labeled "AgentOps trace + audit-log **pattern**," not "shipped legal
-  artifact." WORM/retention/DPIA is the "production hardening" talking point.
+- **Scope note:** screen 2 is labeled "AgentOps trace + audit-log **pattern**," not "shipped legal
+  artifact." WORM storage, retention, and DPIA are production-hardening work.
 
 ## Resolves (from the review)
 Deterministic offer selection · audit≠OTel split · typed contracts · run_id sync · fail-closed ·
-data-honesty (no 30-day, PR/reliability metrics) · replayability · PII-in-logs scoping.
+data integrity (no 30-day, PR/reliability metrics) · replayability · PII-in-logs scoping.

@@ -1,10 +1,9 @@
 # System Architecture — Agio Summit / Agentic Carrier (what calls what)
 
 *Real business problem (telecom churn/fraud) → a production agentic-AI POC that shows **agentic AI +
-RAG + LLM** on **real Telco-AIX data with frontier models**, governed and auditable. This is the diagram
-you present.*
+RAG + LLM** on **real Telco-AIX data with frontier models**, governed and auditable. *
 
-## The stance (say this up front)
+## Design stance
 **We use their data AND frontier models — each where it earns its keep.**
 - **Data:** real **Telco-AIX** (Red Hat) churn + fraud sets — tokenized, pinned.
 - **Frontier LLM (Claude/GPT/Grok via a router):** the **agentic reasoning + RAG synthesis + explanation.**
@@ -55,11 +54,11 @@ That combination *is* "agentic AI, RAG, LLM" done for production — not a chatb
 | 8 | **Trace stream** | The live agent trace = right screen | subscribes to run_id | SSE / Mastra Studio (OTel) |
 | 9 | **Data** | The substrate | — | **Telco-AIX** (Red Hat), pinned sample, synthetic |
 
-**Honest gaps (say them):** Playwright/browser-use and an explicit DSPy pass and a formal knowledge-graph
+**Known gaps:** Playwright/browser-use and an explicit DSPy pass and a formal knowledge-graph
 store are **designed, not built** in this POC. Everything else is real and running.
 
 ## Real in the POC vs the production pattern
 - **Real:** Telco-AIX data, the deterministic gate, the offer validator, the SHA-256 tamper-evident
   audit, the eval numbers, the frontier-LLM NBA, the two-screen.
 - **Pattern (not shipped):** WORM storage, retention/DPIA, the browser-use agent, DSPy tuning — the
-  "production hardening / roadmap" talking points.
+  production-hardening roadmap.

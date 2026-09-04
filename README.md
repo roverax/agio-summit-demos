@@ -1,33 +1,35 @@
-# Agio Summit — governed agentic AI demos and evidence
+# Agio Summit
 
-**Roverax Inc.** · [roverax.ai](https://roverax.ai) · Contact: Nash Vedula, info@roverax.ai
+Governed agentic AI for regulated operations. One shell, deployed per industry.
 
-Agio Summit is one governed agentic-AI shell, deployed as an implementation skin per industry. Each instance keeps the same spine: a signal comes in, agents prepare a recommendation inside deterministic gates, a human approves, and every step is sealed into an audit record. Nothing here approves, moves money, contacts a customer, or changes an account on its own.
+[Roverax Inc.](https://services.roverax.ai/) · [roverax.ai](https://roverax.ai) · info@roverax.ai
 
-This repository publishes the **documentation and evidence** for three instances built between July and August 2026. Source code is not published; the architecture docs, decision records, evidence reports, and one-pagers are.
+## Overview
 
-| # | Instance | Industry | What it proves | Live |
-|---|----------|----------|----------------|------|
-| 01 | [Field Command Center](01-field-command-center-telecom/) | Telecom | Seven field use cases on one governed six-step spine; recommend-only with a human gate and a tamper-evident record | [Public demo](https://agio-summit-field-command-center.vercel.app/) · [Video walkthrough](https://www.loom.com/share/49de41ef90ea4711ade1a7e191b90ae7) |
-| 02 | [Capital Command Center](02-capital-command-center-insurance/) | Life insurance and annuities | A capital ask becomes a reconciled evidence graph with named gate owners and role-based decision packs; scoped four-week private POC | Private deployment; walkthrough on request |
-| 03 | [AI-Native Voice Demo](03-ai-native-voice-demo/) | Frontier-lab audio: cross-channel customer experience | Controlled native speech-to-speech benchmark (OpenAI Realtime vs Gemini Live) with append-only evidence, a blind independent judge, and a fail-closed budget guard | Private deployment on Railway; walkthrough on request |
+Agio Summit runs the same spine in every deployment: a signal comes in, agents prepare a recommendation inside deterministic gates, a named human approves, and every step is written to an append-only audit record. The agents never approve, move money, contact a customer, or change an account on their own.
 
-## How to read this repository
+This repository holds the architecture documents, decision records, evidence reports, and one-pagers for three deployments. Application source is not published.
 
-Each instance folder has a `README.md` with the same shape: the problem, what was built, the evidence with numbers and the report they came from, the governance controls, the stack, an honesty line stating what the instance is and is not, and links. The `docs/` folder under each holds the source documents as they were written during the build, lightly redacted to remove client and counterparty names.
+## Deployments
 
-## What is constant across all three
+| | Deployment | Industry | Demo |
+|---|---|---|---|
+| 01 | [Field Command Center](01-field-command-center-telecom/) | Telecom | [Live](https://agio-summit-field-command-center.vercel.app/) · [Video](https://www.loom.com/share/49de41ef90ea4711ade1a7e191b90ae7) |
+| 02 | [Capital Command Center](02-capital-command-center-insurance/) | Life insurance and annuities | Private, [request a walkthrough](https://services.roverax.ai/) |
+| 03 | [AI-Native Voice Demo](03-ai-native-voice-demo/) | Voice and cross-channel CX | Private, [request a walkthrough](https://services.roverax.ai/) |
 
-- **Recommend-only.** Agents prepare; humans hold every consequential approval. The gate is a code-level control, not a prompt instruction.
-- **Evidence first.** Every run writes an append-only record. Failed runs are kept, never overwritten. Numbers that are illustrative are labeled illustrative.
-- **Fail closed.** Missing configuration, a missing media plane, or a budget breach stops the run before a paid call is made.
-- **One shell, many skins.** The brand, the navy control-tower shell, and the legal block are fixed. Only the industry content changes. See the [shell doctrine](01-field-command-center-telecom/docs/AGIO_SUMMIT_SHELL_DOCTRINE.md).
-- **Adversarial review before outreach.** Each instance was reviewed by an isolated reviewer working from a written brief, and the review is published alongside the build.
+## Common design
 
-## Honesty bound
+- **Recommend-only.** Consequential actions require a human approval that is enforced in code, not in a prompt.
+- **Deterministic guardrails.** Eligibility, budgets, and validation are rules. Language models rank and explain inside the set the rules allow.
+- **Append-only evidence.** Every run is recorded. Failed runs are kept. Illustrative figures are labeled as such.
+- **Fail closed.** Missing configuration, an unavailable media plane, or a budget breach stops the run before any paid call.
+- **One shell, one skin per industry.** Brand, layout, and legal block are fixed. Only the industry content changes. See the [shell guide](01-field-command-center-telecom/docs/AGIO_SUMMIT_SHELL_DOCTRINE.md).
 
-These are production-deployed demo spines built on synthetic data. They are not certified systems, not multi-tenant enterprise deployments, and no client or customer data was used. The ISO/IEC 42001 scope document in instance 03 records its own verdict: not Stage 1 ready.
+## Scope
 
-## Notice
+All three deployments run on synthetic or open data. None uses client, customer, policyholder, or investor data. They are demo spines with production patterns documented, not certified or multi-tenant systems.
+
+## License
 
 See [NOTICE.md](NOTICE.md). Documents are published for review. Agio Summit and Roverax are trademarks of Roverax Inc.

@@ -1,52 +1,50 @@
-# 01 · Field Command Center — telecom
+# Field Command Center
 
-**Live demo:** https://agio-summit-field-command-center.vercel.app/
-**Video walkthrough:** https://www.loom.com/share/49de41ef90ea4711ade1a7e191b90ae7
-**Built:** July 2026 · **Status:** public synthetic demo, production pattern documented
+Telecom deployment of Agio Summit. Proactive, human-gated next-best-action across field, care, and back office.
 
-## The problem
+**Demo:** https://agio-summit-field-command-center.vercel.app/
+**Video:** https://www.loom.com/share/49de41ef90ea4711ade1a7e191b90ae7
 
-A carrier's field, care, and back-office teams see churn, fraud, and service signals in separate systems, and any AI that acts on those signals directly is a compliance risk. The question this instance answers is: *should we save this account?* and, more broadly, how does a regulated operator put agentic AI into daily work without letting a language model make a consequential decision.
+## Overview
 
-## What was built
+A carrier sees churn, fraud, and service signals in separate systems. Any AI that acts on those signals directly is a compliance risk. This deployment shows how a regulated operator can put agentic AI into daily work while a trained model owns the score, deterministic rules own the decision, and a human owns the approval.
 
-One governed six-step spine, run for seven field use cases ranked by value density:
+Seven use cases run on one spine, ranked by value density: control tower, proactive churn save, attach, fraud and collections, proactive care, network operations, back office. The control tower arbitrates across the four customer-scoped domains for one customer at a time.
 
-1. **Signal ingestion** from a pinned, tokenized sample of the open Telco-AIX churn and fraud datasets. Schema and snapshot hash recorded.
-2. **Salience scoring** by a trained LightGBM model. The probability comes from a model, never from a language model's guess.
-3. **Next-best action.** Deterministic eligibility rules set the candidate offer set. A frontier LLM with retrieval ranks and explains *within* that set. A validator rejects any offer not in the catalog and the candidate set. Otherwise the agent abstains.
-4. **Human gate.** Recommend-only. The run suspends until a named human ratifies. Any model timeout or empty candidate set produces no recommendation, never a default action.
-5. **Evidence package.** A projection of steps 1 to 4, with no new inference.
-6. **Outcome learning.** Gated on an approved decision so the system cannot feed itself.
+## How it works
 
-Every run is a single `run_id`-keyed state object whose audit record is a SHA-256 hash-chained, append-only projection kept separately from the debugging trace. The seven use cases: control tower, proactive churn save, attach, fraud and collections, proactive care, network operations, back office. The control tower arbitrates across the four customer-scoped domains for one customer at a time.
+Each run is a single `run_id`-keyed state object that moves through six steps:
 
-## Evidence and measures
+1. **Signal ingestion.** A tokenized row from a pinned sample of the open Telco-AIX churn and fraud datasets. Schema and snapshot hash are recorded.
+2. **Salience scoring.** A trained LightGBM model returns the churn probability.
+3. **Next-best action.** Deterministic eligibility rules produce the candidate offer set. A language model with retrieval ranks and explains within that set. A validator checks the chosen offer against the catalog and the candidate set in SQL and rejects anything else.
+4. **Human gate.** The run suspends until a named human ratifies. A model timeout or an empty candidate set produces no recommendation.
+5. **Evidence package.** A projection of steps 1 to 4 with no new inference.
+6. **Outcome learning.** Gated on an approved decision, so the system cannot feed itself.
 
-- Deterministic decision: hallucinated offers are structurally impossible, because the LLM can only choose from a pre-filtered set and the validator checks the choice in SQL.
-- Tamper-evident audit: `content_hash` plus `prev_hash`, schema version, dataset snapshot, model ID and version, and a three-way split of raw recommendation, eligibility result, and human action.
-- Same-run proof: the product screen and the live agent trace subscribe to the same `run_id`, so the legal record and the demo cannot drift.
-- Adoption strategy described in the video: start with low-risk back-office tasks to build organizational trust, then move toward customer-facing actions.
+The audit record is a SHA-256 hash-chained projection of the run state, written append-only to its own store, separate from the debugging trace. The product screen and the live agent trace subscribe to the same `run_id`.
 
-## Governance controls
+## Guardrails
 
-Recommend-only · named human approval · fail-closed on timeout or empty set · deterministic eligibility as the guardrail · append-only hash-chained audit separate from telemetry · outcome learning gated on approval (segregation of duties) · synthetic data only, no live carrier or customer data.
+- Recommend-only; nothing fires without a named human approval.
+- Hallucinated offers are structurally impossible: the model chooses from a pre-filtered set and the validator checks the choice.
+- Fail closed on timeout or empty set.
+- Audit record carries `content_hash`, `prev_hash`, schema version, dataset snapshot, model ID and version, and a three-way split of raw recommendation, eligibility result, and human action.
+- Synthetic and open data only.
 
 ## Stack
 
-Next.js UI on Vercel · Mastra typed workflows as the agent graph · LightGBM churn model server (Python) · pgvector on Supabase for retrieval · frontier LLM via a model router (Claude, OpenAI, Grok) · append-only Postgres audit store · SSE trace stream.
+Next.js on Vercel · Mastra typed workflows · LightGBM model server (Python) · pgvector on Supabase · model router over Claude, OpenAI, and Grok · append-only Postgres audit store · SSE trace stream.
 
-## Honesty line
+## Limitations
 
-Real and running: the data, the deterministic gate, the offer validator, the hash-chained audit, the evaluation numbers, the LLM next-best action, the two-screen view. Designed but not built in this POC: WORM storage and retention policy, the browser-use agent, and a prompt-optimization pass. The second screen is labeled an agent-ops trace and audit-log *pattern*, not a shipped legal artifact.
+Built and running: the data pipeline, the deterministic gate, the offer validator, the hash-chained audit, the evaluation harness, the LLM next-best-action step, and the two-screen view. Designed but not built: WORM storage and retention policy, a browser-use agent for portal navigation, and a prompt-optimization pass. The trace screen is a pattern demonstration, not a certified legal artifact.
 
 ## Documents
 
-| File | What it is |
-|------|------------|
-| [docs/SYSTEM_ARCHITECTURE.md](docs/SYSTEM_ARCHITECTURE.md) | What calls what, component by component |
-| [docs/ADR-001-runstate-audit.md](docs/ADR-001-runstate-audit.md) | The decision that made the run deterministic and the audit append-only |
-| [docs/ARCHITECTURE_WALKTHROUGH.md](docs/ARCHITECTURE_WALKTHROUGH.md) | Step-by-step explanation with tradeoffs |
-| [docs/ARCHITECTURE_TARGET.md](docs/ARCHITECTURE_TARGET.md) | Target production architecture |
-| [docs/ARCHITECTURE_REVIEW.md](docs/ARCHITECTURE_REVIEW.md) | The six-charter architecture review that produced ADR-001 |
-| [docs/AGIO_SUMMIT_SHELL_DOCTRINE.md](docs/AGIO_SUMMIT_SHELL_DOCTRINE.md) | The reuse rule: one fixed shell, one implementation skin per industry |
+| File | Contents |
+|------|----------|
+| [SYSTEM_ARCHITECTURE.md](docs/SYSTEM_ARCHITECTURE.md) | Components, call graph, what is real versus pattern |
+| [ADR-001-runstate-audit.md](docs/ADR-001-runstate-audit.md) | Deterministic decision, append-only audit, same-run sync |
+| [ARCHITECTURE_TARGET.md](docs/ARCHITECTURE_TARGET.md) | Target production architecture |
+| [AGIO_SUMMIT_SHELL_DOCTRINE.md](docs/AGIO_SUMMIT_SHELL_DOCTRINE.md) | Shell reuse rule: fixed brand and layout, per-industry skin |
