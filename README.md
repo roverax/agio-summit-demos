@@ -15,7 +15,7 @@ This repository holds the architecture documents, decision records, evidence rep
 | | Deployment | Industry | Demo |
 |---|---|---|---|
 | 01 | [Field Command Center](01-field-command-center-telecom/) | Telecom | [Live](https://agio-summit-field-command-center.vercel.app/) · [Video](https://www.loom.com/share/49de41ef90ea4711ade1a7e191b90ae7) |
-| 02 | [Capital Command Center](02-capital-command-center-insurance/) | Life insurance and annuities | Private, [request a walkthrough](https://services.roverax.ai/) |
+| 02 | [Capital Command Center](02-capital-command-center-insurance/) | Life insurance and annuities | [Live](https://agio-summit-capital-command-center.vercel.app/) |
 | 03 | [AI-Native Voice Demo](03-ai-native-voice-demo/) | Voice and cross-channel CX | Private, [request a walkthrough](https://services.roverax.ai/) |
 
 ## Common design
