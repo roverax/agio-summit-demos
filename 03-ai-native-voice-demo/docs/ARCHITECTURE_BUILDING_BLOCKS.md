@@ -4,7 +4,6 @@
 
 | Layer | Location |
 |-------|----------|
-| Full hire architecture + OPEN | `elevenlabs/01-ARCHITECTURE.md` |
 | Phase-1 review learnings (do not repeat) | `elevenlabs/05-PHASE1-REVIEW-LEARNINGS.md` |
 | Speech Engine contract | `elevenlabs/adr/002-speech-engine-interface.md` |
 | Core primitives | `packages/core` — `live/mediaPlane`, `live/continuityInvariants`, `live/stageDefaults` |
@@ -14,7 +13,7 @@
 Agio = continuity & control plane (`ses_*`, gates, evidence, evals, budget).  
 Vendors = media plane (LAB Pipecat today; Speech Engine / Agents / others via `VoiceMediaPort`).
 
-**Why LAB vs SE for local demos:** LAB keeps brain traffic on-box (no public WSS). Speech Engine requires EL to dial *your* `/ws` — local tape uses ngrok as ingress only; see `elevenlabs/PHASE_2A_SPEECH_ENGINE.md` (“Why ngrok”).
+**Why LAB vs SE for local demos:** LAB keeps brain traffic on-box (no public WSS). Speech Engine requires EL to dial *your* `/ws` — local development uses ngrok as ingress only.
 
 ## Planes (not glossary L0–L5)
 

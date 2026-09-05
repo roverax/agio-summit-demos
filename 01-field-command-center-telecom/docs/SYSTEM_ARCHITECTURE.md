@@ -7,7 +7,7 @@ RAG + LLM** on **real Telco-AIX data with frontier models**, governed and audita
 **We use their data AND frontier models — each where it earns its keep.**
 - **Data:** real **Telco-AIX** (Red Hat) churn + fraud sets — tokenized, pinned.
 - **Frontier LLM (Claude/GPT/Grok via a router):** the **agentic reasoning + RAG synthesis + explanation.**
-- **A trained model (LightGBM):** the **risk score** — because I don't let a language model *guess a
+- **A trained model (LightGBM):** the **risk score** — because a language model should not *guess a
   probability.*
 - **Deterministic code + a human:** the **decision** and the **approval.**
 That combination *is* "agentic AI, RAG, LLM" done for production — not a chatbot.

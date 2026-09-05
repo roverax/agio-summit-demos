@@ -5,7 +5,7 @@
 
 ## Context
 
-Speech Engine requires ElevenLabs to dial a **public** `wss://…/ws`. Ngrok/Cloudflare tunnels are hire-tape only (laptop-bound, rotating URLs). Production needs always-on services with stable domains, health checks, and secret injection.
+Speech Engine requires ElevenLabs to dial a **public** `wss://…/ws`. Ngrok/Cloudflare tunnels are for local development only (laptop-bound, rotating URLs). Production needs always-on services with stable domains, health checks, and secret injection.
 
 ## Decision
 
@@ -28,6 +28,6 @@ Speech Engine requires ElevenLabs to dial a **public** `wss://…/ws`. Ngrok/Clo
 
 ## Consequences
 
-- Cutover runbook: [`docs/ops/PRODUCTION.md`](../ops/PRODUCTION.md)
+- Cutover runbook: internal operations document (not published)
 - Local demos may still use Cloudflare/ngrok; production path is Railway.
 - Multi-region / multi-replica Continuity SoR is **out of scope** until ADR 009.

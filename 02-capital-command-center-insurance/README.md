@@ -37,7 +37,7 @@ Read-only service accounts. No write paths to systems of record. No training on 
 - Recommend-only. Human approvals are recorded as sign-off events.
 - Read-only access, in-tenancy execution, SSO and role-based access.
 - Full trace per answer, delivered to the client at readout.
-- A pre-publish gate script blocks vendor-deck language and unlabeled claims in the demo. Every illustrative figure is labeled.
+- A pre-publish gate script blocks marketing language and unlabeled claims in the demo. Every illustrative figure is labeled.
 
 ## Stack
 

@@ -1,7 +1,7 @@
 # Agentic Carrier (Agio Summit / Telecom) — TARGET production architecture (for skill review)
 
 *The current `web/index.html` is a deterministic visual mock. This is the production design it must
-become. Under review by the Chief's skill charters before build (per skills INDEX rule).*
+become.*
 
 ## Goal
 A production agentic telecom demo on the fixed Agio Summit shell, shown as **two screens**:
@@ -24,7 +24,7 @@ A production agentic telecom demo on the fixed Agio Summit shell, shown as **two
    *reasons* the best action + a plain-language explanation via tool-calling. NOT a static if/else.
 4. **Human Gate** — deterministic eligibility guardrail; **recommend-only**; a named human ratifies.
    No auto-offer, credit, contact, or account action.
-5. **Evidence Package** — why-panel: signals, retrieved rules, model + version, confidence.
+5. **Evidence Package** — evidence panel: signals, retrieved rules, model + version, confidence.
 6. **Outcome Learning** — the human's decision + result feed back; the loop never self-feeds an
    unratified recommendation into training (segregation of duties).
 
@@ -43,7 +43,7 @@ the legal/compliance artifact and the AgentOps trace — surfaced on the right s
 Recommend-only · human-in-the-loop · full audit trail · segregation of duties · no automated adverse
 action. Synthetic/tokenized data only; no live carrier or customer data.
 
-## Open questions for the review panel
+## Open questions
 1. Which Telco-AIX features actually drive churn/fraud, and how do we show importance honestly?
 2. Churn model (classifier) vs the LLM's role (NBA reasoning) — clean separation, or does the LLM
    touch the decision? (Deterministic-decision principle from the PO-GL build.)

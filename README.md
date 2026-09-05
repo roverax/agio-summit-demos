@@ -8,7 +8,7 @@ Governed agentic AI for regulated operations. One shell, deployed per industry.
 
 Agio Summit runs the same spine in every deployment: a signal comes in, agents prepare a recommendation inside deterministic gates, a named human approves, and every step is written to an append-only audit record. The agents never approve, move money, contact a customer, or change an account on their own.
 
-This repository holds the architecture documents, decision records, evidence reports, and one-pagers for three deployments. Application source is not published.
+This repository holds the architecture documents, decision records, evidence reports, and one-pagers for three deployments, plus a practitioner playbook on Earned Value Management. Application source is not published.
 
 ## Deployments
 
@@ -17,6 +17,12 @@ This repository holds the architecture documents, decision records, evidence rep
 | 01 | [Field Command Center](01-field-command-center-telecom/) | Telecom | [Live](https://agio-summit-field-command-center.vercel.app/) · [Video](https://www.loom.com/share/49de41ef90ea4711ade1a7e191b90ae7) |
 | 02 | [Capital Command Center](02-capital-command-center-insurance/) | Life insurance and annuities | [Live](https://agio-summit-capital-command-center.vercel.app/) |
 | 03 | [AI-Native Voice Demo](03-ai-native-voice-demo/) | Voice and cross-channel CX | [Private deployment](https://agio-retell-production.up.railway.app/retell), sign-in required · [request a walkthrough](https://services.roverax.ai/) |
+
+## Playbook
+
+| | Document | Subject |
+|---|---|---|
+| 04 | [Earned Value Management Playbook](04-evm-playbook/) | Program control from first principles to AI-enabled variance analysis, grounded in EIA-748, NDIA IPMD, and NASA guidance |
 
 ## Common design
 

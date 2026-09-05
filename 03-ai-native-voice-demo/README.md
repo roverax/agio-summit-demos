@@ -51,9 +51,8 @@ Single-operator deployment with a process-local continuity store and sandbox mes
 | File | Contents |
 |------|----------|
 | [OPENAI_GEMINI_NATIVE_S2S_PRODUCTION_PLAN.md](docs/OPENAI_GEMINI_NATIVE_S2S_PRODUCTION_PLAN.md) | Benchmark architecture, telemetry contract, gates, rollout |
-| [evidence/](docs/evidence/) | H1, H2, H3 reports; resolution-proof experiment design |
+| [evidence/](docs/evidence/) | H1, H2, H3 evidence reports |
 | [adr/](docs/adr/) | Live spine, ingress, evidence plane, session graph, Twilio, Railway hosting |
 | [ARCHITECTURE_BUILDING_BLOCKS.md](docs/ARCHITECTURE_BUILDING_BLOCKS.md) | Constraints shared by every Agio deployment |
 | [BILLING_HARD_LIMIT.md](docs/BILLING_HARD_LIMIT.md) | Fail-closed budget control |
-| [TOKEN_BURN_SCORECARD.md](docs/TOKEN_BURN_SCORECARD.md) | Cost levers and status |
 | [AIMS_SCOPE_AGIO.md](docs/AIMS_SCOPE_AGIO.md) | ISO/IEC 42001 scope draft |
