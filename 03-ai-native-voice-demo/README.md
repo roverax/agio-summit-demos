@@ -2,7 +2,7 @@
 
 Voice and cross-channel CX deployment of Agio Summit, with a controlled speech-to-speech benchmark.
 
-**Deployment:** private, on Railway. [Request a walkthrough](https://services.roverax.ai/).
+**Deployment:** https://agio-retell-production.up.railway.app/retell (private, sign-in required). [Request a walkthrough](https://services.roverax.ai/).
 
 ## Overview
 
