@@ -8,7 +8,7 @@ Governed agentic AI for regulated operations. One shell, deployed per industry.
 
 Agio Summit runs the same spine in every deployment: a signal comes in, agents prepare a recommendation inside deterministic gates, a named human approves, and every step is written to an append-only audit record. The agents never approve, move money, contact a customer, or change an account on their own.
 
-This repository holds the architecture documents, decision records, evidence reports, and one-pagers for three deployments, plus a practitioner playbook on Earned Value Management. Application source is not published.
+This repository holds the architecture documents, decision records, evidence reports, and one-pagers for three deployments, plus two publications: a practitioner playbook on Earned Value Management and an executive briefing on agentic AI in US telecom. Application source is not published.
 
 ## Deployments
 
@@ -18,11 +18,12 @@ This repository holds the architecture documents, decision records, evidence rep
 | 02 | [Capital Command Center](02-capital-command-center-insurance/) | Life insurance and annuities | [Live](https://agio-summit-capital-command-center.vercel.app/) |
 | 03 | [AI-Native Voice Demo](03-ai-native-voice-demo/) | Voice and cross-channel CX | [Private deployment](https://agio-retell-production.up.railway.app/retell), sign-in required · [request a walkthrough](https://services.roverax.ai/) |
 
-## Playbook
+## Publications
 
 | | Document | Subject |
 |---|---|---|
 | 04 | [Earned Value Management Playbook](04-evm-playbook/) | Program control from first principles to AI-enabled variance analysis, grounded in EIA-748, NDIA IPMD, and NASA guidance |
+| 05 | [The Agentic Carrier: Executive Briefing](05-agentic-carrier-briefing/) | How the three US wireless carriers are applying agentic AI, argued from FY2022 to FY2025 public filings |
 
 ## Common design
 
