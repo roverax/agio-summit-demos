@@ -63,6 +63,7 @@ test("the proxy runs an allowlisted workflow without exposing its Mastra token",
 
   assert.equal(response.statusCode, 200);
   assert.deepEqual(response.body, {
+    runId: "run-created-by-mastra",
     status: "success",
     steps: { ingest: { output: { account: { id: "C-001" } } } },
   });
