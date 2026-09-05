@@ -8,7 +8,7 @@ Governed agentic AI for regulated operations. One shell, deployed per industry.
 
 Agio Summit runs the same spine in every deployment: a signal comes in, agents prepare a recommendation inside deterministic gates, a named human approves, and every step is written to an append-only audit record. The agents never approve, move money, contact a customer, or change an account on their own.
 
-This repository holds the architecture documents, decision records, evidence reports, and one-pagers for three deployments, plus two publications: a practitioner playbook on Earned Value Management and an executive briefing on agentic AI in US telecom. Application source is not published.
+This repository holds the architecture documents, decision records, evidence reports, and one-pagers for three deployments, plus two publications: a practitioner playbook on Earned Value Management and an executive briefing on agentic AI in US telecom. Application source is not published, with one exception: a small allowlisted proxy for the telecom demo that keeps model-server credentials out of the browser, included so the security pattern can be reviewed.
 
 ## Deployments
 
