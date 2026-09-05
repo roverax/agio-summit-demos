@@ -48,3 +48,4 @@ Built and running: the data pipeline, the deterministic gate, the offer validato
 | [ADR-001-runstate-audit.md](docs/ADR-001-runstate-audit.md) | Deterministic decision, append-only audit, same-run sync |
 | [ARCHITECTURE_TARGET.md](docs/ARCHITECTURE_TARGET.md) | Target production architecture |
 | [AGIO_SUMMIT_SHELL_DOCTRINE.md](docs/AGIO_SUMMIT_SHELL_DOCTRINE.md) | Shell reuse rule: fixed brand and layout, per-industry skin |
+| [proxy/](proxy/) | Allowlisted Vercel proxy that keeps Mastra credentials out of the browser |

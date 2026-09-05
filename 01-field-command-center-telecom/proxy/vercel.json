@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/mastra.js": {
+      "maxDuration": 45
+    }
+  }
+}
