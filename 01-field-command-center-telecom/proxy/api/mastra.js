@@ -62,7 +62,7 @@ export function createMastraProxy({ fetchImpl = globalThis.fetch, env = process.
       }
 
       const result = await runResponse.json();
-      return response.status(200).json(result);
+      return response.status(200).json({ ...result, runId: created.runId });
     } catch {
       return response.status(502).json({ error: "upstream_unavailable" });
     }
